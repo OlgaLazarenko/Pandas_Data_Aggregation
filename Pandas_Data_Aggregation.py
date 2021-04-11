@@ -34,4 +34,4 @@ brige_df = pd.read_csv('E:\_Python_Projects_Data\Data_Visualization\Briges_Data_
 print('Briges dataframe:')
 print(brige_df.head())
 print()
-print(brige_df.tail(10))
+print(brige_df.tail(8))
