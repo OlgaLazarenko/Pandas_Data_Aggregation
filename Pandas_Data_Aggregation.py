@@ -46,6 +46,13 @@ print('--- brige_df  dataframe basic information:')
 print(brige_df.info())
 print()
 
+# remove nonvalid values <?>
+auto_df = auto_df[auto_df['Price']  != '?'] # remove rows with <?> at the column <Price> from the data frame
+brige_df = brige_df[brige_df['Length']  != '?'] # remove rows with <?> at the column <Price> from the data frame
+brige_df = brige_df[brige_df['Material']  != '?']
+brige_df = brige_df[brige_df['Type']  != '?']
+
+
 # unique values of the dataframes
 print('auto_df unique values:')
 print('Symboling:')
@@ -77,6 +84,8 @@ print()
 print('Type:')
 print(brige_df['Type'].unique())
 print()
+print()
+
 #--------------------------------------------------------------------
 
 # *** 3)
@@ -84,13 +93,12 @@ print()
 
 
 
-
-
 # How many cars were imported at 1985? The DataFrame <auto_df>
+print('Summarizing the DataFrames:')
 print(str(auto_df['Make'].count()) + '  cars were imported at 1985')
 print()
 # How many briges were build? The DataFrame <brige_df>
-print( str(brige_df['Material'].count()) + '  briges were built')
+print( str(brige_df['River'].count()) + '  briges were built')
 # What is the max price of an imported car?
 print(str(auto_df['Price'].max()) + ' is the max price of an imported car')
 # What is the min price of an imported car?
