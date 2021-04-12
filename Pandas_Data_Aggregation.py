@@ -48,14 +48,44 @@ print()
 
 # unique values of the dataframes
 print('auto_df unique values:')
+print('Symboling:')
+print(auto_df['Symboling'].unique())
+print()
 print('Make:')
 print(auto_df['Make'].unique())
 print()
-
+print('Body Style:')
+print(auto_df['Body Style'].unique())
+print()
+print('* * * * * *')
+print('brige_df unique values:')
+print('River:')
+print(brige_df['River'].unique())
+print()
+print('Erected:')
+print(brige_df['Erected'].unique())
+print()
+print('Purpose:')
+print(brige_df['Purpose'].unique())
+print()
+print('Length:')
+print(brige_df['Length'].unique())
+print()
+print('Material:')
+print(brige_df['Material'].unique())
+print()
+print('Type:')
+print(brige_df['Type'].unique())
+print()
 #--------------------------------------------------------------------
 
 # *** 3)
 # *** Summarizing the DataFrames
+
+
+
+
+
 # How many cars were imported at 1985? The DataFrame <auto_df>
 print(str(auto_df['Make'].count()) + '  cars were imported at 1985')
 print()
