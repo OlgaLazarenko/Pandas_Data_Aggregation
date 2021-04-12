@@ -109,9 +109,13 @@ print('Summarizing the DataFrames:')
 print()
 print(str(auto_df['Make'].count()) + '  cars were imported at 1985')
 # What is the max price of an imported car?
-print('$' + str(auto_df['Price'].max()) + ' is the max price of an imported car')
+print('$' + str(auto_df['Price'].max()) + ' . . .  max price of an imported car')
 # What is the min price of an imported car?
-print('$' + str(auto_df['Price'].min()) + ' is the min price of an imported car')
+print('$' + str(auto_df['Price'].min()) + ' . . . min price of an imported car')
+# What is the average price of an imported car?
+print('$' + str(round(auto_df['Price'].mean())) + '. . . average price of an imported car')
+# What is the total sale of the imported cars?
+print('$' + str(auto_df['Price'].sum()) +  '  the total sale of the imported cars')
 print()
 # How many briges were build? The DataFrame <brige_df>
 
