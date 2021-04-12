@@ -20,6 +20,7 @@ print('Auto dataframe:')
 print(auto_df.head())
 print()
 
+
 # read the file <Briges_1818_1986.csv> info <brige> dataframe
 brige_df = pd.read_csv('E:\_Python_Projects_Data\Data_Visualization\Briges_Data_Set\Briges_1818_1986.csv' , 
                         usecols = ['River' ,
@@ -44,10 +45,22 @@ print()
 print('--- brige_df  dataframe basic information:')
 print(brige_df.info())
 print()
+
+# unique values of the dataframes
+print('auto_df unique values:')
+print('Make:')
+print(auto_df['Make'].unique())
+print()
+
+#--------------------------------------------------------------------
+
 # *** 3)
 # *** Summarizing the DataFrames
 # How many cars were imported at 1985? The DataFrame <auto_df>
 print(str(auto_df['Make'].count()) + '  cars were imported at 1985')
 print()
 # How many briges were build? The DataFrame <brige_df>
-print( str(brige_df['Material'].count()) + '  briges were built') 
+print( str(brige_df['Material'].count()) + '  briges were built')
+# What is the max price of an imported car?
+print(str(auto_df['Price'].max()) + ' is the max price of an imported car')
+# What is the min price of an imported car?
