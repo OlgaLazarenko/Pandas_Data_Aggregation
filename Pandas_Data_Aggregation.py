@@ -40,7 +40,9 @@ print()
 # *** 2) 
 # check the basic information of the dataframes
 print('--- auto_df  dataframe basic information:')
+# auto_df['Price'] = auto_df['Price'].astype(str).astype(int) # convert the values of the column <Price> to  the integer data type
 print(auto_df.info())
+# auto_df.dtypes()
 print()
 print('--- brige_df  dataframe basic information:')
 print(brige_df.info())
@@ -51,6 +53,14 @@ auto_df = auto_df[auto_df['Price']  != '?'] # remove rows with <?> at the column
 brige_df = brige_df[brige_df['Length']  != '?'] # remove rows with <?> at the column <Price> from the data frame
 brige_df = brige_df[brige_df['Material']  != '?']
 brige_df = brige_df[brige_df['Type']  != '?']
+
+# convert <Price> column of <auto_df> dataframe not integer data type
+print()
+print(auto_df.dtypes)
+auto_df['Price'] = auto_df['Price'].astype(str).astype(int)
+print(auto_df.dtypes)
+print()
+print()
 
 
 # unique values of the dataframes
@@ -84,6 +94,7 @@ print()
 print('Type:')
 print(brige_df['Type'].unique())
 print()
+print('* * * * * *')
 print()
 
 #--------------------------------------------------------------------
@@ -95,10 +106,12 @@ print()
 
 # How many cars were imported at 1985? The DataFrame <auto_df>
 print('Summarizing the DataFrames:')
+print()
 print(str(auto_df['Make'].count()) + '  cars were imported at 1985')
+# What is the max price of an imported car?
+print('$' + str(auto_df['Price'].max()) + ' is the max price of an imported car')
+# What is the min price of an imported car?
+print('$' + str(auto_df['Price'].min()) + ' is the min price of an imported car')
 print()
 # How many briges were build? The DataFrame <brige_df>
-print( str(brige_df['River'].count()) + '  briges were built')
-# What is the max price of an imported car?
-print(str(auto_df['Price'].max()) + ' is the max price of an imported car')
-# What is the min price of an imported car?
+
