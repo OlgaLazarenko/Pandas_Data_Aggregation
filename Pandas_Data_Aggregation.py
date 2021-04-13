@@ -138,3 +138,7 @@ print()
 # calculate the sales by the car make and car body type
 auto_sales_make_style = auto_df.groupby(['Make','Body Style']).agg(Sales = pd.NamedAgg(column = 'Price' , aggfunc = 'sum'))
 print(auto_sales_make_style)
+print()
+# calculate the sales by the car body type and the car make
+auto_sales_style_make = auto_df.groupby(['Body Style','Make']).agg(Sales = pd.NamedAgg(column = 'Price' , aggfunc = 'sum'))
+print(auto_sales_style_make)
