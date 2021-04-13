@@ -115,7 +115,8 @@ print('$' + str(auto_df['Price'].min()) + ' . . . min price of an imported car')
 # What is the average price of an imported car?
 print('$' + str(round(auto_df['Price'].mean())) + '. . . average price of an imported car')
 # What is the total sale of the imported cars?
-print('$' + str(auto_df['Price'].sum()) +  '  the total sale of the imported cars')
+print('$' + str(f"{auto_df['Price'].sum():,d}") +  '  the total sale of the imported cars')
+# show the number with commas as thousands separators f"{auto_df['Price'].sum():,d}"
 print()
 # How many briges were build? The DataFrame <brige_df>
 
