@@ -125,3 +125,9 @@ print(auto_df.groupby('Make')['Price'].sum())
 # OR 
 auto_sales_make = auto_df.groupby('Make').agg(Sales = pd.NamedAgg(column = 'Price' , aggfunc = 'sum'))  # rename the summary column 
 print(auto_sales_make) # display the new dataframe with summary on sales
+# sort the sales summary dataframe by the column <Sales> at the descending order
+auto_sales_make_sorted = auto_sales_make.sort_values( by = 'Sales' , ascending = False , inplace = False)
+print()
+print()
+print("Sorted summary sales:")
+print(auto_sales_make_sorted)
