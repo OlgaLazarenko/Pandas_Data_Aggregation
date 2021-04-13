@@ -118,5 +118,10 @@ print('$' + str(f"{round(auto_df['Price'].mean()):,d}") + '. . . average price o
 print('$' + str(f"{auto_df['Price'].sum():,d}") +  '  the total sale of the imported cars')
 # show the number with commas as thousands separators f"{auto_df['Price'].sum():,d}"
 print()
-# How many briges were build? The DataFrame <brige_df>
 
+# show the summary of sales by the car make
+print("Sales of the imported cars by the car make:")
+print(auto_df.groupby('Make')['Price'].sum())
+# OR 
+auto_sales_make = auto_df.groupby('Make').agg(Sales = pd.NamedAgg(column = 'Price' , aggfunc = 'sum'))  # rename the summary column 
+print(auto_sales_make) # display the new dataframe with summary on sales
