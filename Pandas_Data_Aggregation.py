@@ -131,3 +131,10 @@ print()
 print()
 print("Sorted summary sales:")
 print(auto_sales_make_sorted)
+print()
+print()
+
+# Summaries with multiple columns 
+# calculate the sales by the car make and car body type
+auto_sales_make_style = auto_df.groupby(['Make','Body Style']).agg(Sales = pd.NamedAgg(column = 'Price' , aggfunc = 'sum'))
+print(auto_sales_make_style)
