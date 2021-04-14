@@ -147,8 +147,12 @@ print(auto_sales_style_make)
 print()
 print("Miliage:")
 print(auto_df.groupby('Body Style').agg( city_min_mpg = ('City mpg', 'min') ,
+                                        higway_min_mpg = ('Highway mpg' , 'min') , 
                                         city_max_mpg = ('City mpg' , 'max') ,
-                                        city_avg_mpg = ('City mpg' , 'max')
+                                        higway_max_mpg = ('Highway mpg' , 'max') ,
+                                        city_avg_mpg = ('City mpg' , 'mean') , 
+                                        higway_avg_mpg = ('Highway mpg' , 'mean')
+                                        
                                         )
     )   
 print()
