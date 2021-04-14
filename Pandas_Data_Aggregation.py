@@ -144,9 +144,11 @@ print()
 auto_sales_style_make = auto_df.groupby(['Body Style','Make']).agg(Sales = pd.NamedAgg(column = 'Price' , aggfunc = 'sum'))
 print(auto_sales_style_make)
 # calculate the min, max miliage
+print()
 print("Miliage:")
 print(auto_df.groupby('Body Style').agg( city_min_mpg = ('City mpg', 'min') ,
                                         city_max_mpg = ('City mpg' , 'max') ,
                                         city_avg_mpg = ('City mpg' , 'max')
                                         )
     )   
+print()
