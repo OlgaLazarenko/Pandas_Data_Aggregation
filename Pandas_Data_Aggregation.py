@@ -106,8 +106,7 @@ print()
 
 # How many cars were imported at 1985? The DataFrame <auto_df>
 print('Summarizing the DataFrames:')
-print()
-print(str(f"{auto_df['Make'].count():,d}") + '  cars were imported at 1985')
+print(str(f"{auto_df['Make'].count():,d}") + '  cars were imported')
 # What is the max price of an imported car?
 print('$' + str(f"{auto_df['Price'].max():,d}") + ' . . .  max price of an imported car')
 # What is the min price of an imported car?
@@ -134,6 +133,8 @@ print(auto_sales_make_sorted)
 print()
 print()
 
+
+
 # Summaries with multiple columns 
 # calculate the sales by the car make and car body type
 auto_sales_make_style = auto_df.groupby(['Make','Body Style']).agg(Sales = pd.NamedAgg(column = 'Price' , aggfunc = 'sum'))
@@ -142,3 +143,6 @@ print()
 # calculate the sales by the car body type and the car make
 auto_sales_style_make = auto_df.groupby(['Body Style','Make']).agg(Sales = pd.NamedAgg(column = 'Price' , aggfunc = 'sum'))
 print(auto_sales_style_make)
+# calculate the min, max miliage
+print("Miliage:")
+print(auto_df.groupby(auto_df['Body Style'])(['City mpg','Highway mpg']).agg(['min' , 'max' , 'mean']) )
