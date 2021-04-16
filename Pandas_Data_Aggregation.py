@@ -135,8 +135,9 @@ print()
 
 
 
-# Summaries with multiple columns 
+# Summaries with multiple columns <auto_df>
 # calculate the sales by the car make and car body type
+print("Imported cars, 1985")
 auto_sales_make_style = auto_df.groupby(['Make','Body Style']).agg(Sales = pd.NamedAgg(column = 'Price' , aggfunc = 'sum'))
 print(auto_sales_make_style)
 print()
@@ -144,6 +145,7 @@ print()
 auto_sales_style_make = auto_df.groupby(['Body Style','Make']).agg(Sales = pd.NamedAgg(column = 'Price' , aggfunc = 'sum'))
 print(auto_sales_style_make)
 # calculate the min, max miliage
+print()
 print()
 print("Miliage:")
 print(auto_df.groupby('Body Style').agg( city_min_mpg = ('City mpg', 'min') ,
@@ -165,3 +167,39 @@ print(auto_df.groupby(['Body Style','Make']).agg( city_min_mpg = ('City mpg', 'm
                                         higway_avg_mpg = ('Highway mpg' , 'mean')
                                                 )
    )
+
+print()
+print('-------------------------------------------------------------------------')
+print()
+print('Briges data set:')
+# how many briges were build?
+print(str(brige_df['River'].count()) + '  briges were buidt')
+
+print()
+print('Types of erected briges:')
+print(str(brige_df['Erected'].unique()))
+
+print()
+print('Purpose of the briges:')
+print(str(brige_df['Purpose'].unique()))
+
+print()
+print('Lenght of the briges:')
+print(brige_df['Length'].unique())
+
+print()
+print('Material of the briges:')
+print(brige_df['Material'].unique())
+
+print()
+print('Type of the briges:')
+print(brige_df['Type'].unique())
+
+'''
+['River' ,
+                                    'Erected' ,
+                                    'Purpose' ,
+                                    'Length' ,
+                                    'Material' ,
+                                    'Type'])
+'''
