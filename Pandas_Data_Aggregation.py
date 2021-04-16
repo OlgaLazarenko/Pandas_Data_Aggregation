@@ -193,8 +193,25 @@ print(brige_df['Material'].unique())
 
 print()
 print('Type of the briges:')
-print(brige_df['Type'].unique())
+print()
 
+
+# *** Aggregations of brige_df dataframe with multiple columns
+print('Aggregations of brige_df dataframe ')
+print('-- Number of briges by the river:')
+print(brige_df.groupby(['River','Erected']).Erected.count())
+
+print()
+print('-- Number of the erected briges by the purpose:')
+print(brige_df.groupby(['Erected','Purpose']).Purpose.count())
+
+print()
+print('-- Number of briges by the purpose, the type and the material:')
+print(brige_df.groupby(['Purpose','Type','Material']).Material.count())
+
+print()
+print('-- Number of briges by their purpose and material:')
+print(brige_df.groupby(['Purpose','Material']).Material.count())
 '''
 ['River' ,
                                     'Erected' ,
