@@ -212,6 +212,8 @@ print(brige_df.groupby(['Purpose','Type','Material']).Material.count())
 print()
 print('-- Number of briges by their purpose and material:')
 print(brige_df.groupby(['Purpose','Material']).Material.count())
+print()
+print()
 '''
 ['River' ,
                                     'Erected' ,
@@ -220,3 +222,8 @@ print(brige_df.groupby(['Purpose','Material']).Material.count())
                                     'Material' ,
                                     'Type'])
 '''
+
+# --------------------------------------------------------------------------------
+# *** Aggregatons with conditions
+print('Number of hightway briges by the material:')
+print(brige_df.groupby(['Type' == 'Highway']).Material.count())
